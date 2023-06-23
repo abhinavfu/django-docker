@@ -1,0 +1,21 @@
+# Deploying Django with Docker Compose AWS EC2
+
+__________________________________________________________
+
+----------------------------------------------------------
+# command for changes in Dockerfile
+----------------------------------------------------------
+docker-compose build
+
+----------------------------------------------------------
+# command for run server
+----------------------------------------------------------
+docker-compose up
+
+----------------------------------------------------------
+# command for django
+----------------------------------------------------------
+docker-compose run --rm app sh -c "django-admin startproject project_name ."
+docker-compose run --rm app sh -c "python manage.py startapp app_name"
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+docker-compose run --rm app sh -c "python manage.py createsuperuser"
